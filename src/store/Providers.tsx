@@ -14,12 +14,11 @@ interface Props {
 
 export const Providers = ({ children }: Props) => {
 
-  useEffect(() => {
+  useEffect(() => { 
     const favorites = JSON.parse( localStorage.getItem('favorite-pokemons') ?? '{}'  );
     store.dispatch( setFavoritePokemons(favorites) );
     
-  }, [])
-  
+  }, []);
   
   
   return (

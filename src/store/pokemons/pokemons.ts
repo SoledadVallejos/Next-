@@ -24,7 +24,7 @@ interface PokemonsState {
 
 
 const initialState: PokemonsState = {
-  favorites: {},
+   favorites: {}, // inicio {} vacio asi lo q se genere del lado servidor mas lo que se genenra del lado del cliente sea igual 
   // ...getInitialState(),
   // '1': { id: '1', name: 'bulbasaur' },
   // '3': { id: '3', name: 'venusaur' },
@@ -38,7 +38,7 @@ const pokemonsSlice = createSlice({
 
     setFavoritePokemons( state, action: PayloadAction<{ [key: string]: SimplePokemon }> ) {
       state.favorites = action.payload;
-    },
+    }, 
 
     toggleFavorite( state, action: PayloadAction<SimplePokemon> ) { // actions de tipo PayloadAction y el tipo de informacion SimplePokemon
 
