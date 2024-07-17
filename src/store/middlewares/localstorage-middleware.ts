@@ -21,4 +21,5 @@ export const localStorageMiddleware = ( state: MiddlewareAPI ) => {
 
 
 
-
+// custom middelewares --> detecta el cambio del state y dispara el efecto secundario --> graba en el local storage 
+// https://redux-toolkit.js.org/api/getDefaultMiddleware
