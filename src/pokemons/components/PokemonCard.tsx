@@ -16,7 +16,7 @@ interface Props {
 export const PokemonCard = ({ pokemon }:Props) => {
 
   const { id, name } = pokemon;
-  const isFavorite = useAppSelector( state => !!state.pokemons.favorites[id] );
+  const isFavorite = useAppSelector( state => !!state.pokemons.favorites[id] ); // acceso a el store | DOBLE !! transforma en un booleano--> ES LO MISMO =>  state.pokemons.favorites[id]  !== undefined
   const dispatch = useAppDispatch();
 
   const onToggle = () => {
@@ -80,3 +80,5 @@ export const PokemonCard = ({ pokemon }:Props) => {
     </div>
   )
 }
+
+// la data queda persistente si la guardo en el local storage o en la db , sino se pierde 

@@ -5,7 +5,7 @@ import { SimplePokemon } from '@/pokemons';
 /*
   {
     favorites: {
-      '1': { id: 1, name: 'bulbasaur' },
+      '1': { id: 1, name: 'bulbasaur' }, // se arma como llamaria a los pokemon por llaves 
       '2': { id: 2, name: 'bulbasaur' },
     }
   }
@@ -40,20 +40,20 @@ const pokemonsSlice = createSlice({
       state.favorites = action.payload;
     },
 
-    toggleFavorite( state, action: PayloadAction<SimplePokemon> ) {
+    toggleFavorite( state, action: PayloadAction<SimplePokemon> ) { // actions de tipo PayloadAction y el tipo de informacion SimplePokemon
 
-      const pokemon = action.payload;
+      const pokemon = action.payload; // leo el pokemon q viene en la accion 
       const { id } = pokemon;
 
-      if ( !!state.favorites[id] ) {
-        delete state.favorites[id];
+      if ( !!state.favorites[id] ) { // si existe 
+        delete state.favorites[id]; //delete 
         // return;
       } else {
-        state.favorites[id] = pokemon;
+        state.favorites[id] = pokemon; // le paso el pokemon q recibo en la accion
       }
 
       //TODO: No se debe de hacer en Redux
-      localStorage.setItem('favorite-pokemons', JSON.stringify( state.favorites ) );
+      localStorage.setItem('favorite-pokemons', JSON.stringify( state.favorites ) );  //almacena en el localstorage
 
     }
 
@@ -63,3 +63,5 @@ const pokemonsSlice = createSlice({
 export const { toggleFavorite, setFavoritePokemons } = pokemonsSlice.actions;
 
 export default pokemonsSlice.reducer;
+
+// rxslice --> atajo para crear slice 

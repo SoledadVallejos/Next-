@@ -8,7 +8,9 @@ import { IoHeartOutline } from "react-icons/io5";
 
 export const FavoritePokemons = () => {
 
-  const favoritePokemons = useAppSelector( state => Object.values( state.pokemons.favorites ) );
+  const favoritePokemons = useAppSelector( state => Object.values( state.pokemons.favorites ) ); // tranforma  a un arreglo ==> Object.values
+  console.log(favoritePokemons);
+  
   // const [pokemons, setPokemons ] = useState( favoritePokemons );
 
   // useEffect(() => {
